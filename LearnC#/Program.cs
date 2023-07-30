@@ -6,8 +6,12 @@
         {
             int a = 10;
             int b = 20;
-            int sum = a + b;
-            Console.WriteLine($"Sum = {sum}");
+            Console.WriteLine($"Sum = {summ(a, b)}");
+        }
+
+        static int summ(int a, int b)
+        {
+            return a + b;
         }
     }
 }
