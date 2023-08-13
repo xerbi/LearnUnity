@@ -12,5 +12,10 @@ namespace LearnC_
         {
             Console.WriteLine($"Hello world!");
         }
+
+        public void test2()
+        {
+            Console.WriteLine($"I am done");
+        }
     }
 }
