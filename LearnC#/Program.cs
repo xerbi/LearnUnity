@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.Data;
+using System.Drawing;
 
 namespace LearnC_
 {
@@ -6,9 +7,19 @@ namespace LearnC_
     {
         static void Main(string[] args)
         {
-            LogicTask1();
-        }
+            Asya tasks = new Asya();
+            //tasks.Task1_1();
+            /*
+            Console.Write($"Input number from 1 to 9: ");
+            byte num = Convert.ToByte( Console.ReadLine() );
+            tasks.Task1_2(num);
+            */
+            
+            tasks.Task1_5();
 
+
+        }
+     /*
         // Вывод массива в консоль!
         static void ShowArray(Array mas)
         {
@@ -26,6 +37,7 @@ namespace LearnC_
          * и положительные числа расположены 
          * на случайных местах в массиве. (normal)
          */
+        /*
         static void RandomMassive_v1(int size = 10) // size - необязательный параметр
         {
             int[] arr = new int[size];
@@ -64,7 +76,7 @@ namespace LearnC_
          *   а) Верно ли, что все его цифры одинаковые?
          *   б) Определить, есть ли среди его цифр одинаковы
          */
-
+        /*
         static void LogicTask1(int number = 919)
         {
             string str = number.ToString();
@@ -89,6 +101,6 @@ namespace LearnC_
                     if (str[i] == str[j]) break; 
                 }
             }
-        }
+        }*/ 
     }
 }
