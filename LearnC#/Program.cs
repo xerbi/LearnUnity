@@ -7,7 +7,7 @@ namespace LearnC_
     {
         static void Main(string[] args)
         {
-            Asya tasks = new Asya();
+            FirstTasks tasks = new FirstTasks();
             //tasks.Task1_1();
             /*
             Console.Write($"Input number from 1 to 9: ");
@@ -15,7 +15,7 @@ namespace LearnC_
             tasks.Task1_2(num);
             */
             
-            tasks.Task1_5();
+            tasks.Task1_10();
 
 
         }
