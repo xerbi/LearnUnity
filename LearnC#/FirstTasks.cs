@@ -31,7 +31,12 @@ namespace LearnC_
             int sum = 0;
             Console.Write($"Enter integer:");
             int num = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= num; i++) sum += i;
+            if (num < 1) 
+            {
+                for (int i = 1; i >= num; i--) sum += i;
+            }
+            else { for (int i = 1; i <= num; i++) sum += i; }
+            
             Console.WriteLine($"Sum = {sum}");
         }
 
