@@ -100,5 +100,67 @@ namespace LearnC_
             Console.WriteLine($"{firstnum} + {secondnum} = {firstnum + secondnum}");
             Console.WriteLine($"{firstnum} * {secondnum} = {firstnum * secondnum}");
         }
+
+        //Пользователь вводит число. Выведите на экран квадрат этого числа, куб этого числа
+        public void Task1_11()
+        {
+            Console.Write($"Enter integer: ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            //int num = int.Parse (Console.ReadLine());
+            Console.WriteLine($"{num}^2 = {Math.Pow (num,2)}");
+            Console.WriteLine($"{num}^3 = {Math.Pow(num, 3)}");
+        }
+
+        //Даны три переменные a, b и c. Изменить значения этих переменных так, чтобы в a хранилось значение a+b,
+        //в b хранилась разность старых значений c−a, а в c хранилось сумма старых значений a+b+c.
+        public void Task1_12()
+        {
+            Console.Write($"Enter a: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write($"Enter b: ");
+            int b = int.Parse(Console.ReadLine());
+            Console.Write($"Enter c: ");
+            int c = int.Parse(Console.ReadLine());
+            int b_new = b;
+            b = c - a;
+            a = a + b_new;
+            c = a + c;
+            Console.WriteLine($"a = {a}, b = {b}, c= {c}");
+        }
+        //Вывести на экран букву "W" из символов "*" (звездочка)
+        public void Task1_13() 
+        {
+            Console.WriteLine(
+            $"    *     *     *\n" +
+            $"     *   * *   *\n" +
+            $"      * *   * *\n" +
+            $"       *     *");
+        }
+
+        //Дан прямоугольник размером 647 x 170. Сколько квадратов со стороной 30 можно вырезать из него?
+        public void Task1_14() 
+        {
+            const int A = 647;
+            const int B = 170;
+            const int SIDE = 30;
+
+            Console.WriteLine($"There are {(647/30) * (170/30)} squares in rectangle 647 x 170");
+        }
+
+        //Пользователь вводит три числа. Найдите среднее арифметическое этих чисел,
+        //а также разность удвоенной суммы первого и третьего чисел и утроенного второго числа.
+        public void Task1_15()
+        {
+            Console.Write($"Enter a: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write($"Enter b: ");
+            int b = int.Parse(Console.ReadLine());
+            Console.Write($"Enter c: ");
+            int c = int.Parse(Console.ReadLine());
+            int armean = (a + b + c) / 3;
+            int dif = 2 * (a + c) - 3 * b;
+            Console.WriteLine($"Arithmetic mean = {armean}");
+            Console.WriteLine($"Difference = {dif}");
+        }
     }
 }
