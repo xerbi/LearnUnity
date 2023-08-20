@@ -4,14 +4,8 @@ namespace Arrays
 {
     class Arrays
     {
-        static void Main(string[] args)
-        {
-            task_18();
-            Console.ReadLine();
-        }
-
         //Заполнить массив числами от 1 до n
-        static void task_1()
+        public static void task_1()
         {
             int length = 10;
             int[] mas = new int[length];
@@ -29,7 +23,7 @@ namespace Arrays
         }
 
         //Заполнить массив нулями, кроме первого и последнего элементов, которые должны быть равны единице
-        static void task_2()
+        public static void task_2()
         {
             int length = 10;
             int[] mas = new int[length];
@@ -49,7 +43,7 @@ namespace Arrays
         }
 
         //Заполнить массив нулями и единицами, при этом данные значения чередуются, начиная с нуля
-        static void task_3()
+        public static void task_3()
         {
             int length = 10;
             int[] mas = new int[length];
@@ -67,7 +61,7 @@ namespace Arrays
         }
 
         //Заполнить массив последовательными нечетными числами, начиная с единицы
-        static void task_4()
+        public static void task_4()
         {
             int length = 10;
             int[] mas = new int[length];
@@ -87,7 +81,7 @@ namespace Arrays
         }
 
         //Сформировать возрастающий массив из четных чисел
-        static void task_5()
+        public static void task_5()
         {
             int n = 10;
             int[] mas = new int[n];
@@ -107,7 +101,7 @@ namespace Arrays
         }
 
         //Создать массив, каждый элемент которого равен квадрату своего номера
-        static void task_6()
+        public static void task_6()
         {
             int length = 15;
             int[] mas = new int[length];
@@ -124,7 +118,7 @@ namespace Arrays
         }
 
         //Создать массив, состоящий из троек подряд идущих одинаковых элементов
-        static void task_7()
+        public static void task_7()
         {
             int[] triplets = new int[10];
             for (int i = 0; i < triplets.Length - 2; i += 3)
@@ -137,7 +131,7 @@ namespace Arrays
         }
 
         //Найти количество четных чисел в массиве
-        static void task_12()
+        public static void task_12()
         {
             int length = 15;
             int[] mas = new int[length];
@@ -157,7 +151,7 @@ namespace Arrays
         }
 
         //Найти количество чисел в массиве, которые делятся на 3, но не делятся на 7
-        static void task_13()
+        public static void task_13()
         {
             int[] mas = new int[30];
             int counter = 0;
@@ -170,7 +164,7 @@ namespace Arrays
         }
 
         //Найдите сумму чисел массива, которые стоят на четных местах
-        static void task_14()
+        public static void task_14()
         {
 
 
@@ -178,7 +172,7 @@ namespace Arrays
         }
 
         //Найдите наименьший четный элемент массива
-        static void task_15()
+        public static void task_15()
         {
             int[] mas = new int[10];
             Random rand = new Random();
@@ -198,7 +192,7 @@ namespace Arrays
         }
 
         //Переставить элементы массива в обратном порядке
-        static void task_18()
+        public static void task_18()
         {
             Console.Write($"Enter the number of array elements: ");
             int amountOfElements = int.Parse(Console.ReadLine());
@@ -221,7 +215,7 @@ namespace Arrays
         }
 
         //В данном массиве найти максимальное количество одинаковых элементов
-        static void task_20()
+        public static void task_20()
         {
             int[] mas = new int[10];
             Random rand = new Random();
