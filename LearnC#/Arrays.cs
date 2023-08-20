@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Arrays
+namespace TaskForArrays
 {
-    class Arrays
+    class TaskArray
     {
         //Заполнить массив числами от 1 до n
         public static void task_1()
@@ -153,7 +153,7 @@ namespace Arrays
         //Найти количество чисел в массиве, которые делятся на 3, но не делятся на 7
         public static void task_13()
         {
-            int[] mas = new int[30];
+            int[] mas = new int[10];
             int counter = 0;
 
             for (int i = 0; i < mas.Length; i++)
@@ -199,7 +199,7 @@ namespace Arrays
             int[] mas = new int[amountOfElements];
             Random rand = new Random();
 
-            for (int i = mas.Length; i >= 0; i--)
+            for (int i = mas.Length - 1; i >= 0; i--)
             {
                 mas[i] = rand.Next(-50, 50);
                 Console.WriteLine($"{mas[i]}");
@@ -219,7 +219,7 @@ namespace Arrays
         {
             int[] mas = new int[10];
             Random rand = new Random();
-            for (int i = 0; i <= mas.Length; i++)
+            for (int i = 0; i < mas.Length; i++)
             {
                 mas[i] = rand.Next(-10, 10);
                 Console.WriteLine($"{mas[i]}");

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using TaskForArrays;
 
 namespace LearnC_
 {
@@ -6,8 +7,7 @@ namespace LearnC_
     {
         static void Main(string[] args)
         {
-            Ksusha ksu = new Ksusha();
-            ksu.RandomMassive_v1();
+            TaskArray.task_18();
         }
 
     }
