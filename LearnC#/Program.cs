@@ -7,7 +7,7 @@ namespace LearnC_
     {
         static void Main(string[] args)
         {
-            TaskArray.task_18();
+            TaskArray.task_13();
         }
 
     }

@@ -158,6 +158,7 @@ namespace TaskForArrays
 
             for (int i = 0; i < mas.Length; i++)
             {
+                mas[i] = i + 1;
                 if (mas[i] % 3 == 0 && mas[i] % 7 != 0) counter++;
             }
             Console.WriteLine($"The numbers of elements in the array that are divisible by 3 and not divisible by 7 = {counter}");
