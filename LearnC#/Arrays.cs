@@ -144,7 +144,7 @@ namespace TaskForArrays
             Console.WriteLine("Array:");
             for (int i = 0; i < length; i++)
             {
-                Console.WriteLine($"{i}");
+                Console.WriteLine($"{i}  {mas[i]}");
             }
         }
 
@@ -153,7 +153,7 @@ namespace TaskForArrays
         {
             int[] mas = { 1, 2, 3, 3, 2, 1,};
             bool palindrome = true;
-            for (int i =0; i < mas.Length; i++)
+            for (int i = 0; i < mas.Length; i++)
             {
                 if (mas[i] != mas[mas.Length - 1 - i])
                 {
