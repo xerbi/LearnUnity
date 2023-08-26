@@ -7,15 +7,11 @@ namespace LearnC_
     {
         static void Main(string[] args)
         {
-            FirstTasks tasks = new FirstTasks();
-            //tasks.Task1_1();
-            /*
-            Console.Write($"Input number from 1 to 9: ");
-            byte num = Convert.ToByte( Console.ReadLine() );
-            tasks.Task1_2(num);
-            */
-            
-            tasks.Task1_20();
+            //FirstTasks tasks = new FirstTasks();       
+            //tasks.Task1_20();
+
+            Arrays arrays = new Arrays();
+            arrays.Task2_10();
 
 
         }
