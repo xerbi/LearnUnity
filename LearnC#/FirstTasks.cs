@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata;
 
 namespace LearnC_
 {
@@ -161,6 +162,88 @@ namespace LearnC_
             int dif = 2 * (a + c) - 3 * b;
             Console.WriteLine($"Arithmetic mean = {armean}");
             Console.WriteLine($"Difference = {dif}");
+        }
+
+        //Известно, что x кг конфет стоит a рублей. Определите, сколько стоит y кг этих конфет,
+        //а также сколько кг конфет можно купить на k рублей.Все значения вводит пользователь.
+        public void Task1_16()
+        {
+            Console.WriteLine($"Введите х кг конфет:");
+            int x = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"Введите a рублей:");
+            int a = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"Введите y кг конфет:");
+            int y = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"Введите k рублей:");
+            int k = Convert.ToInt32(Console.ReadLine());
+
+            int kg_sweets = a / x;
+            Console.WriteLine($"На {k} рублей можно купить {k / kg_sweets} кг конфет");
+            Console.WriteLine($"{y} кг стоит {kg_sweets * y} рублей");
+
+        }
+
+        //Даны две переменных с некоторыми значениями.Поменять местами значения этих переменных.
+        public void Task1_17()
+        {
+            Console.WriteLine($"Enter integer a:");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Enter other integer b:");
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            int c = a;
+            a = b;
+            b = c;
+
+            Console.WriteLine($"a = {a}; b = {b}");
+        }
+
+        //Поменяйте местами значения двух переменных, не используя дополнительных переменных.
+        public void Task1_18()
+        {
+            Console.WriteLine($"Enter integer a:");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Enter other integer b:");
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            a = b - a;
+            b = b - a;
+            a = a + b;
+
+            Console.WriteLine($"a = {a}; b = {b}");
+        }
+
+        //Вывести на экран пять строк из нулей, причем количество нулей в каждой строке равно номеру строки.
+        public void Task1_19()
+        {
+            int line = 5;
+            for (int i = 0; i < line; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write('0');
+                }
+                Console.WriteLine('0');
+            }
+        }
+
+        //Вывести на экран прямоугольник, заполненный буквами А. Количество строк в прямоугольнике равно 5, количество столбцов равно 8.
+        public void Task1_20()
+        {
+            int line = 5;
+            int column = 8;
+
+            for (int i = 0; i < line; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    Console.Write('A');
+                }
+                Console.WriteLine();
+            }
         }
     }
 }

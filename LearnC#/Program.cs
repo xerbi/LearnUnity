@@ -15,7 +15,7 @@ namespace LearnC_
             tasks.Task1_2(num);
             */
             
-            tasks.Task1_15();
+            tasks.Task1_20();
 
 
         }
