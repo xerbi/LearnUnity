@@ -62,5 +62,35 @@ namespace LearnC_
                 Console.Write($"{mas[i]} ");
             }
         }
+
+        //Найдите сумму чисел массива, которые стоят на четных местах
+        //мне не нрав как решила но пока оставлю тк работает
+        public void task_14()
+        {
+            int[] mas = new int[int.Parse(Console.ReadLine())];
+            int counter = 0;
+
+            Random rand = new Random();
+            for (int i = 0; i < mas.Length; i += 1) mas[i] = rand.Next(0, 50);
+
+            for (int i = 1; i < mas.Length; i += 2)
+            {
+                counter += mas[i];
+            }
+
+            /*
+            int counter2 = 0;
+            for (int i = 0; i < mas.Length; ++i)
+            {
+                if ((i + 1) % 2 == 0) counter2 += mas[i];
+            }
+            */
+
+            Console.WriteLine($"Ammount of elements = {counter}");
+            for (int i = 0; i < mas.Length; i++)
+            {
+                Console.WriteLine($"{mas[i]}");
+            }
+        }
     }
 }
