@@ -11,58 +11,12 @@ namespace LearnC_
             //tasks.Task1_20();
 
             Arrays arrays = new Arrays();
-            arrays.Task2_10();
+            arrays.Task2_18();
 
 
         }
      /*
-        // Вывод массива в консоль!
-        static void ShowArray(Array mas)
-        {
-            foreach (var a in mas)
-            {
-                Console.Write($"{a} ");
-            }
-            Console.WriteLine();
-        }
-
-        /*
-         * Создайте массив, в котором 
-         * количество отрицательных чисел 
-         * равно количеству положительных 
-         * и положительные числа расположены 
-         * на случайных местах в массиве. (normal)
-         */
-        /*
-        static void RandomMassive_v1(int size = 10) // size - необязательный параметр
-        {
-            int[] arr = new int[size];
-            Random rand = new Random();
-
-            int posituve = 0, negative = 0;
-            int middle = size / 2;
-
-            for (int i = 0; i < size; i++)
-            {
-                if (posituve < middle && negative < middle)
-                {
-                    arr[i] = rand.Next(-100, 100);
-                    if (arr[i] > 0) posituve++;
-                    else negative++;
-                    continue;
-                }
-
-                if (posituve != middle)
-                {
-                    arr[i] = rand.Next(100);
-                    continue;
-                }
-
-                if (negative != middle)
-                {
-                    arr[i] = rand.Next(100)*(-1);
-                }
-            }
+        
 
             ShowArray(arr);
         }//static void RandomMassive_v1(int size = 10)
