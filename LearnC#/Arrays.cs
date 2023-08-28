@@ -169,6 +169,38 @@ namespace TaskForArrays
             else Console.WriteLine("Array isn't palindrome");    
         }
 
+        //Сформировать массив из случайных чисел, в которых ровно две единицы, стоящие на случайных позициях
+        public static void task_10()
+        {
+            Console.Write("Count of elements = ");
+            int[] mas = new int[int.Parse(Console.ReadLine())];
+            Random rand = new Random();
+            for (int i = 0; i < mas.Length; i++)
+            {
+                mas[i] = rand.Next(0, 20);
+                Console.WriteLine($"{mas[i]}");
+            }
+
+            //if (mas.Length < 2) return null;
+            //int firstPosition = rand.Next(mas.Length);
+            //int secondPosition = rand.Next(mas.Length);
+
+            //mas[firstPosition] = 1;
+            //mas[secondPosition] = 1;
+            ////int numOfUnits = 0;
+            ////while (numOfUnits < 2)
+            ////{
+            ////    int randPosition = rand.Next(0, mas.Length);
+            ////    if (mas[randPosition] == 0) numOfUnits++;
+            ////}
+
+            //Console.WriteLine($"Generated array: ");
+            //foreach (int i in mas) 
+            //{
+            //    Console.Write($"{mas[i]}");
+            //}
+        }
+
         //Найти количество четных чисел в массиве
         public static void task_12()
         {
@@ -250,6 +282,38 @@ namespace TaskForArrays
                 if (mas[i] % 2 == 0 && min > mas[i]) min = mas[i];
             }
             Console.WriteLine($"min = {min}");
+        }
+
+        //Дан массив. Заменить все числа, меньшие последнего элемента массива, на первый элемент
+        public static void task_16()
+        {
+            int[] mas = { 5, 4, 67, 3, 7, 12, 10, 9};
+            int firstElement = mas[0];
+            int lastElement = mas[mas.Length - 1];
+            for (int i = 0; i < mas.Length - 1; i++)
+            {
+                if (mas[i] < lastElement) mas[i] = firstElement; 
+            }
+
+            for (int i = 0; i < mas.Length; i++)
+            {
+                Console.WriteLine(mas[i]);
+            }
+        }
+
+        //Заменить каждый элемент массива с четным номером на соседний слева элемент
+        public static void task_17()
+        {
+            int[] mas = new int[10];
+            for (int i = 1; i < mas.Length; i += 2)
+            {
+                mas[i] = i + 1;
+                mas[i] = mas[i - 1];
+            }
+            foreach (int i in mas)
+            {
+                Console.WriteLine($"{i}  {mas[i]} ");
+            }
         }
 
         //Переставить элементы массива в обратном порядке
