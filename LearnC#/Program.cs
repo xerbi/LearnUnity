@@ -1,94 +1,95 @@
 ﻿using System.Drawing;
+using System.Xml.Linq;
 
 namespace LearnC_
 {
+    abstract class Entity
+    {
+        string name;
+        int age;
+
+        public string Name
+        {
+            get => name;
+        }
+
+        public int Age
+        {
+            get => age;
+        }
+
+        protected Entity(int _age, string _name)
+        {
+            name = _name;
+            age = _age;
+        }
+
+        public abstract void Say();
+    }
+
+    class Enemy : Entity
+    {
+        int level_angry;
+
+        public int Level_angry
+        {
+            get => level_angry;
+        }
+
+        public Enemy(int _level_angry, int _age, string _name) : base(_age, _name)
+        {
+            level_angry = _level_angry;
+        }
+
+        public override void Say()
+        {
+            Console.WriteLine("Ловите его!!!");
+        }
+
+        public void Show()
+        {
+            Console.WriteLine("HELLO WORLD");
+        }
+    }
+
+    class Enimals : Entity
+    {
+        public Enimals(int _age, string _name) : base(_age, _name) { }
+        public override void Say()
+        {
+            Console.WriteLine("МЯУ МЯУ");
+        }
+    }
+
+    class Character : Entity
+    {
+        public Character(int _age, string _name) : base(_age, _name) { }
+        public override void Say()
+        {
+            Console.WriteLine("Привет!");
+        }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            LogicTask1();
+            Enemy enemy = new Enemy(10, 22, "Eudolf");
+            Enimals enimals = new Enimals(3, "Salamon");
+            Character character = new Character(16, "MyBut");
+
+            Console.WriteLine($"Level angry: {enemy.Level_angry}");
+
+            ShowSay(enemy);
+            ShowSay(enimals);
+            ShowSay(character);
         }
 
-        // Вывод массива в консоль!
-        static void ShowArray(Array mas)
+        static void ShowSay(Entity e)
         {
-            foreach (var a in mas)
-            {
-                Console.Write($"{a} ");
-            }
-            Console.WriteLine();
-        }
-
-        /*
-         * Создайте массив, в котором 
-         * количество отрицательных чисел 
-         * равно количеству положительных 
-         * и положительные числа расположены 
-         * на случайных местах в массиве. (normal)
-         */
-        static void RandomMassive_v1(int size = 10) // size - необязательный параметр
-        {
-            int[] arr = new int[size];
-            Random rand = new Random();
-
-            int posituve = 0, negative = 0;
-            int middle = size / 2;
-
-            for (int i = 0; i < size; i++)
-            {
-                if (posituve < middle && negative < middle)
-                {
-                    arr[i] = rand.Next(-100, 100);
-                    if (arr[i] > 0) posituve++;
-                    else negative++;
-                    continue;
-                }
-
-                if (posituve != middle)
-                {
-                    arr[i] = rand.Next(100);
-                    continue;
-                }
-
-                if (negative != middle)
-                {
-                    arr[i] = rand.Next(100)*(-1);
-                }
-            }
-
-            ShowArray(arr);
-        }//static void RandomMassive_v1(int size = 10)
-
-        /*
-         * Дано трехзначное число.
-         *   а) Верно ли, что все его цифры одинаковые?
-         *   б) Определить, есть ли среди его цифр одинаковы
-         */
-
-        static void LogicTask1(int number = 919)
-        {
-            string str = number.ToString();
-
-            int i = 0;
-            int size = str.Length;
-            for (i = 1; i < size; i++)
-            {
-                if (str[i] != str[i - 1]) break;
-            }
-
-            //а) Верно ли, что все его цифры одинаковые?
-            if (i != size) Console.WriteLine("Верно ли, что все его цифры одинаковые? НЕТ");
-            else Console.WriteLine("Верно ли, что все его цифры одинаковые? ДА");
-
-            //б) Определить, есть ли среди его цифр одинаковы
-            int counter = 0;
-            for (i = 0; i < size; i++)
-            {
-               for (int j = 1; j < size; ++j)
-                {
-                    if (str[i] == str[j]) break; 
-                }
-            }
+            e.Say();
+            Console.WriteLine("Name is {0}", e.Name);
+            Console.WriteLine($"Age is {e.Age}");
         }
     }
-}
+}     
