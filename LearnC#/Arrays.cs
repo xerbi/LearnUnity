@@ -339,6 +339,24 @@ namespace TaskForArrays
             }
         }
 
+        //В данном массиве найдите количество чисел, соседи у которых отличаются более чем в 2 раза
+        public static void task_19()
+        {
+            int[] mas = new int[10];
+            Random rand = new Random();
+            for (int i = 0; i < mas.Length; i++)
+            {
+                mas[i] = rand.Next(-10, 10);
+                Console.WriteLine($"{mas[i]}");
+            }
+            Console.WriteLine();
+            int counter = 0;
+            for (int i = 0; i < mas.Length; i++)
+            {
+                 
+            }
+        }
+
         //В данном массиве найти максимальное количество одинаковых элементов
         public static void task_20()
         {
@@ -397,6 +415,8 @@ namespace TaskForArrays
                 Console.Write($"{mas[i]} ");
             }
         }
+
+
     }
 }
 
