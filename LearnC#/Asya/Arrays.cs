@@ -225,9 +225,9 @@ namespace LearnC_
 
             for (int i = 0; i < l; i++)
             {
-                if ((positive < middle) && (negative<middle))
+                if ((positive < middle) && (negative < middle))
                 {
-                    nums[i] = random.Next(-100,100) ;
+                    nums[i] = random.Next(-100, 100);
                     if (nums[i] < 0) negative++;
                     else positive++;
                     continue;
@@ -235,7 +235,7 @@ namespace LearnC_
 
                 if (positive == middle)
                 {
-                    nums[i] = random.Next(100) *(-1);
+                    nums[i] = random.Next(100) * (-1);
                 }
 
                 if (negative == middle)
@@ -260,7 +260,7 @@ namespace LearnC_
 
             for (int i = 0; i < l; i++)
             {
-                nums[i] = random.Next(-100,100) ;
+                nums[i] = random.Next(-100, 100);
                 if (nums[i] % 2 == 0) even_num++;
             }
 
@@ -311,7 +311,7 @@ namespace LearnC_
 
             for (int i = 0; i < l; i++)
             {
-                nums[i] = random.Next(-100,100);
+                nums[i] = random.Next(-100, 100);
                 if (even)
                 {
                     sum += nums[i];
@@ -339,7 +339,7 @@ namespace LearnC_
             for (int i = 0; i < l; i++)
             {
                 nums[i] = random.Next(-100, 100);
-                if ((nums[i]%2 == 0) && (nums[i] < min_even))
+                if ((nums[i] % 2 == 0) && (nums[i] < min_even))
                 {
                     min_even = nums[i];
                 }
@@ -371,7 +371,7 @@ namespace LearnC_
                 Console.WriteLine($"{i}");
             }
 
-            Console.WriteLine($"nums[0]= {nums[0]},nums[l-1] ={nums[l-1]}");
+            Console.WriteLine($"nums[0]= {nums[0]},nums[l-1] ={nums[l - 1]}");
 
             for (int i = 1; i < l; i++)
             {
@@ -404,7 +404,7 @@ namespace LearnC_
 
             for (int i = 1; i < l; i++)
             {
-                if (i %2 == 0) nums[i] = nums[i - 1];
+                if (i % 2 == 0) nums[i] = nums[i - 1];
             }
 
             foreach (int i in nums)
@@ -427,7 +427,7 @@ namespace LearnC_
                 nums[i] = random.Next(-100, 100);
             }
 
-            for (int i = 0, j = l-1; i<l; i++, j--)
+            for (int i = 0, j = l - 1; i < l; i++, j--)
             {
                 nums_reverse[i] = nums[j];
             }
@@ -444,13 +444,13 @@ namespace LearnC_
         }
 
         //В данном массиве найдите количество чисел, соседи у которых отличаются более чем в 2 раза.
-        public void Task2_19() 
+        public void Task2_19()
         {
 
         }
 
         //В данном массиве найти максимальное количество одинаковых элементов
-        public void Task2_20() 
+        public void Task2_20()
         {
 
         }
@@ -477,7 +477,7 @@ namespace LearnC_
 
         //Дан массив.Осуществите циклический сдвиг массив на k единиц вправо,
         //если первый наименьший элемент массива расположен раньше последнего наибольшего элемента массива, и влево, если иначе
-        public void Task2_27 () { }
+        public void Task2_27() { }
 
         //Дан массив и число p.Найдите два различных числа в массиве, сумма которых наиболее близка к p. 
         public void Task2_28() { }

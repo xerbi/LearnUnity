@@ -1,15 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
+using System.Drawing;
+using LearnC_.Asya;
 
 namespace LearnC_
 {
-    internal class Ksusha
+    internal class Program
     {
+        static void Main(string[] args)
+        {
+            //FirstTasks tasks = new FirstTasks();       
+            //tasks.Task1_20();
+
+            Arrays arrays = new Arrays();
+            arrays.Task2_10();
+
+
+        }
+     /*
         // Вывод массива в консоль!
-        private void ShowArray(Array mas)
+        static void ShowArray(Array mas)
         {
             foreach (var a in mas)
             {
@@ -25,7 +34,8 @@ namespace LearnC_
          * и положительные числа расположены 
          * на случайных местах в массиве. (normal)
          */
-        public void RandomMassive_v1(int size = 10) // size - необязательный параметр
+        /*
+        static void RandomMassive_v1(int size = 10) // size - необязательный параметр
         {
             int[] arr = new int[size];
             Random rand = new Random();
@@ -51,7 +61,7 @@ namespace LearnC_
 
                 if (negative != middle)
                 {
-                    arr[i] = rand.Next(100) * (-1);
+                    arr[i] = rand.Next(100)*(-1);
                 }
             }
 
@@ -63,8 +73,8 @@ namespace LearnC_
          *   а) Верно ли, что все его цифры одинаковые?
          *   б) Определить, есть ли среди его цифр одинаковы
          */
-
-        public void LogicTask1(int number = 919)
+        /*
+        static void LogicTask1(int number = 919)
         {
             string str = number.ToString();
 
@@ -83,12 +93,11 @@ namespace LearnC_
             int counter = 0;
             for (i = 0; i < size; i++)
             {
-                for (int j = 1; j < size; ++j)
+               for (int j = 1; j < size; ++j)
                 {
-                    if (str[i] == str[j]) break;
+                    if (str[i] == str[j]) break; 
                 }
             }
-        }
+        }*/ 
     }
 }
-

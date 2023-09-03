@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection.Metadata;
 
-namespace LearnC_
+namespace LearnC_.Asya
 {
     internal class FirstTasks
     {
@@ -10,10 +10,10 @@ namespace LearnC_
         //Перевод числа из метров в километры
         public void Task1_1()
         {
-            int meters; 
+            int meters;
             Console.WriteLine($"Enter length in meters:");
-            meters = Convert.ToInt32 (Console.ReadLine());
-            Console.WriteLine($"{meters} meters = {meters / 1000.0} km = {meters / 1000} km {meters%1000} m");
+            meters = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"{meters} meters = {meters / 1000.0} km = {meters / 1000} km {meters % 1000} m");
         }
 
         //Вывести на экран таблицу умножения на любое число (число ты передаешь в метод как параметр)
@@ -32,12 +32,12 @@ namespace LearnC_
             int sum = 0;
             Console.Write($"Enter integer:");
             int num = Convert.ToInt32(Console.ReadLine());
-            if (num < 1) 
+            if (num < 1)
             {
                 for (int i = 1; i >= num; i--) sum += i;
             }
             else { for (int i = 1; i <= num; i++) sum += i; }
-            
+
             Console.WriteLine($"Sum = {sum}");
         }
 
@@ -77,7 +77,7 @@ namespace LearnC_
         {
             Console.WriteLine($"Enter temperature in Celsius:");
             float tempC = Convert.ToInt32(Console.ReadLine());
-            float tempF = (tempC * 9 / 5) + 32;
+            float tempF = tempC * 9 / 5 + 32;
             Console.WriteLine($"{tempC} Celsius = {tempF} Fahrenheit");
         }
 
@@ -108,7 +108,7 @@ namespace LearnC_
             Console.Write($"Enter integer: ");
             int num = Convert.ToInt32(Console.ReadLine());
             //int num = int.Parse (Console.ReadLine());
-            Console.WriteLine($"{num}^2 = {Math.Pow (num,2)}");
+            Console.WriteLine($"{num}^2 = {Math.Pow(num, 2)}");
             Console.WriteLine($"{num}^3 = {Math.Pow(num, 3)}");
         }
 
@@ -129,7 +129,7 @@ namespace LearnC_
             Console.WriteLine($"a = {a}, b = {b}, c= {c}");
         }
         //Вывести на экран букву "W" из символов "*" (звездочка)
-        public void Task1_13() 
+        public void Task1_13()
         {
             Console.WriteLine(
             $"    *     *     *\n" +
@@ -139,13 +139,13 @@ namespace LearnC_
         }
 
         //Дан прямоугольник размером 647 x 170. Сколько квадратов со стороной 30 можно вырезать из него?
-        public void Task1_14() 
+        public void Task1_14()
         {
             const int A = 647;
             const int B = 170;
             const int SIDE = 30;
 
-            Console.WriteLine($"There are {(647/30) * (170/30)} squares in rectangle 647 x 170");
+            Console.WriteLine($"There are {647 / 30 * (170 / 30)} squares in rectangle 647 x 170");
         }
 
         //Пользователь вводит три числа. Найдите среднее арифметическое этих чисел,
