@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Metrics;
+using System.Drawing;
 
 namespace TaskForArrays
 {
@@ -170,36 +171,40 @@ namespace TaskForArrays
         }
 
         //Сформировать массив из случайных чисел, в которых ровно две единицы, стоящие на случайных позициях
-        public static void task_10()
-        {
-            Console.Write("Count of elements = ");
-            int[] mas = new int[int.Parse(Console.ReadLine())];
-            Random rand = new Random();
-            for (int i = 0; i < mas.Length; i++)
-            {
-                mas[i] = rand.Next(0, 20);
-                Console.WriteLine($"{mas[i]}");
-            }
+        //private void ShowMassive(int[] array, int size)
+        //{
+        //    for (int i = 0; i < size; ++i) Console.Write($"{array[i]} ");
+        //    Console.WriteLine();
+        //}
 
-            //if (mas.Length < 2) return null;
-            //int firstPosition = rand.Next(mas.Length);
-            //int secondPosition = rand.Next(mas.Length);
+        //public static void task_10()
+        //{
+        //    int size = 20;
+        //    int[] mas = new int[size];
 
-            //mas[firstPosition] = 1;
-            //mas[secondPosition] = 1;
-            ////int numOfUnits = 0;
-            ////while (numOfUnits < 2)
-            ////{
-            ////    int randPosition = rand.Next(0, mas.Length);
-            ////    if (mas[randPosition] == 0) numOfUnits++;
-            ////}
+        //    Random rand = new Random();
+        //    int index_1 = rand.Next(0, size - 1);
+        //    int index_2;
 
-            //Console.WriteLine($"Generated array: ");
-            //foreach (int i in mas) 
-            //{
-            //    Console.Write($"{mas[i]}");
-            //}
-        }
+        //    do
+        //    {
+        //        index_2 = rand.Next(0, size - 1);
+        //    } while (index_2 == index_1);
+
+        //    for (int i = 0; i < size; ++i)
+        //    {
+        //        if (i == index_1 || i == index_2)
+        //        {
+        //            mas[i] = 1;
+        //            continue;
+        //        }
+
+        //        mas[i] = rand.Next(-100, 100);
+        //        if (mas[i] == 1) mas[i] += rand.Next(-100, 100);
+        //    }
+
+        //    ShowMassive(mas, size);
+        //}
 
         //Найти количество четных чисел в массиве
         public static void task_12()
@@ -304,15 +309,31 @@ namespace TaskForArrays
         //Заменить каждый элемент массива с четным номером на соседний слева элемент
         public static void task_17()
         {
-            int[] mas = new int[10];
-            for (int i = 1; i < mas.Length; i += 2)
+            Console.Write("Enter length of array: ");
+            int length = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[length];
+            Random random = new Random();
+
+            for (int i = 0; i < length; i++)
             {
-                mas[i] = i + 1;
-                mas[i] = mas[i - 1];
+                arr[i] = random.Next(-50, 50);
             }
-            foreach (int i in mas)
+
+            foreach (int i in arr)
             {
-                Console.WriteLine($"{i}  {mas[i]} ");
+                Console.WriteLine($"{i}");
+            }
+
+            Console.WriteLine();
+
+            for (int i = 1; i < length; i++)
+            {
+                if (i % 2 == 0) arr[i] = arr[i - 1];
+            }
+
+            foreach (int i in arr)
+            {
+                Console.WriteLine($"{i}");
             }
         }
 
@@ -342,19 +363,23 @@ namespace TaskForArrays
         //В данном массиве найдите количество чисел, соседи у которых отличаются более чем в 2 раза
         public static void task_19()
         {
-            int[] mas = new int[10];
+            int[] array = new int[10];
             Random rand = new Random();
-            for (int i = 0; i < mas.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                mas[i] = rand.Next(-10, 10);
-                Console.WriteLine($"{mas[i]}");
+                array[i] = rand.Next(-20, 20);
+                Console.WriteLine($"{array[i]}");
             }
             Console.WriteLine();
             int counter = 0;
-            for (int i = 0; i < mas.Length; i++)
+            for (int i = 1; i < array.Length - 1; i++)
             {
-                 
+                if (Math.Abs(array[i] - array[i - 1]) > 2 && Math.Abs(array[i] - array[i + 1]) > 2)
+                {
+                    counter++;
+                }
             }
+            Console.WriteLine($"The number of numbers whose neighbors differ by more than 2 times: {counter}");
         }
 
         //В данном массиве найти максимальное количество одинаковых элементов
@@ -416,7 +441,26 @@ namespace TaskForArrays
             }
         }
 
+        //Дан массив x из n элементов. Найдите x1−x2+x3−…−xn−1+xn
+        public static void task_21()
+        {
+            Console.Write($"Enter the number of array elements: ");
+            int[] arr = new int[int.Parse(Console.ReadLine())];
+            int result = 0;
 
+            for (int i = 0; i < arr.Length; i++)
+            {
+                //if (i % 2 == 0)
+                //{
+                //    result += arr[i];
+                //}
+                //else 
+                //{
+                //    result -= arr[i];
+                //}
+            }
+            Console.WriteLine("Result: " + result);
+        }
     }
 }
 

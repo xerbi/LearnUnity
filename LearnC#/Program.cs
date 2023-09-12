@@ -1,5 +1,5 @@
 ﻿using System;
-using TaskForStatements;
+using TaskForArrays;
 
 namespace LearnC_
 {
@@ -7,7 +7,7 @@ namespace LearnC_
     {
         static void Main(string[] args)
         {
-            TaskStatements.task_6();
+            TaskArray.task_21();
         }
 
     }
