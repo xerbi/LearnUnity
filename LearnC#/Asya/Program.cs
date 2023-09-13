@@ -12,7 +12,7 @@ namespace LearnC_.Asya
             //tasks.Task1_20();
 
             Arrays arrays = new Arrays();
-            arrays.Task2_22();
+            arrays.Task2_24();
 
 
         }

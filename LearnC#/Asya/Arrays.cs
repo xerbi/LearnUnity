@@ -4,6 +4,16 @@ namespace LearnC_.Asya
 {
     internal class Arrays
     {
+        public void ArrayShow(int[] arr, int last_index)
+        {
+            
+            for (int i = 0; i <= last_index;++i)
+            {
+                Console.Write($"{arr[i]} ");
+            }
+            Console.WriteLine();
+        }
+        
         //Заполнить массив числами от 1 до n.
         public void Task2_1()
         {
@@ -587,11 +597,117 @@ namespace LearnC_.Asya
         }
 
         //Найдите количество различных элементов данного массива. 
-        public void Task2_23() { }
+        public void Task2_23() 
+        {
+            Console.WriteLine("Enter length of array:");
+            int l = Convert.ToInt32(Console.ReadLine());
+            int[] mas = new int[l];
+            Random rand = new Random();
+            int count = 0;
+
+            for (int i = 0; i < l; ++i)
+            {
+                mas[i] = rand.Next(-10, 10);
+            }
+
+            Array.Sort(mas);
+
+            if (mas[0] != mas[1]) count++;
+            if (mas[l-1] != mas[l-2]) count++;
+
+            for (int i = 1; i < l-1; ++i)
+            {
+                if ((mas[i] != mas[i - 1]) && (mas[i] != mas[i + 1])) count++;
+            }
+
+            foreach (int i in mas)
+            {
+                Console.Write($"{i} ");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"count: {count}");
+        }
 
         //Даны два массива.Сформировать третий массив, состоящий из тех элементов, которые:
         //а) присутствуют в обоих массивах; б) присутствуют только в одном из массивов.
-        public void Task2_24() { }
+
+        //НЕ РЕШЕНО!
+        public void Task2_24() 
+        {
+            int l1 = 10, l2 = 10;
+            int[] mas1 = new int[l1];
+            int[] mas2 = new int[l2];
+            int[] mas_res_a = new int[l1+l2];
+            int[] mas_res_b = new int[l1+l2];
+            int index_a = 0;
+            int index_b = 0;
+            int j = 0;
+            Random rand = new Random();
+
+            for (int i = 0; i < l1; ++i)
+            {
+                mas1[i] = rand.Next(-10, 10);
+            }
+
+            for (int i = 0; i < l2; ++i)
+            {
+                mas2[i] = rand.Next(-10, 10);
+            }
+
+            Array.Sort(mas1);
+            Array.Sort(mas2);
+
+            for (int i = 0; i < l1; ++i)
+            {
+                if ((i != 0)&&(mas1[i] == mas1[i - 1])) continue;
+
+                while(j < l2)
+                {
+                    if (mas1[i] == mas2[j])
+                    {
+                        mas_res_a[index_a] = mas1[i];
+                        index_a++;
+                        j++;
+                        break;
+                    }
+                    else if (mas1[i] > mas2[j])
+                    {
+                        if ((j!=0)&&(mas2[j] != mas2[j - 1]))
+                        {
+                            mas_res_b[index_b] = mas2[j];
+                            index_b++;
+                        }
+                        j++;
+
+                    }
+                    else if (mas1[i] < mas2[j])
+                    {
+                        mas_res_b[index_b] = mas1[i];
+                        index_b++;
+                        j++;
+                        break;
+                    }
+                }
+                if (j == l2)
+                {
+                    mas_res_b[index_b] = mas1[i];
+                    index_b++;
+                }
+            }
+            Console.WriteLine("mas1:");
+            ArrayShow(mas1,l1-1);
+
+            Console.WriteLine("mas2:");
+            ArrayShow(mas2,l2-1);
+
+            Console.WriteLine("mas_union:");
+            ArrayShow(mas_res_a, index_a);
+
+            Console.WriteLine("mas_only_one:");
+            ArrayShow(mas_res_b,index_b);
+
+        }
 
         //Даны два упорядоченных по возрастанию массива.
         //Образовать из этих двух массивов единый упорядоченный по возрастанию массив.

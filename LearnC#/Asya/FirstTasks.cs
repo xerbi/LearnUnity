@@ -145,7 +145,7 @@ namespace LearnC_.Asya
             const int B = 170;
             const int SIDE = 30;
 
-            Console.WriteLine($"There are {647 / 30 * (170 / 30)} squares in rectangle 647 x 170");
+            Console.WriteLine($"There are {A / SIDE * (B / SIDE)} squares in rectangle 647 x 170");
         }
 
         //Пользователь вводит три числа. Найдите среднее арифметическое этих чисел,
