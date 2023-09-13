@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LearnC_
+namespace LearnC_.Asya
 {
     internal class Arrays
     {
@@ -446,20 +446,145 @@ namespace LearnC_
         //В данном массиве найдите количество чисел, соседи у которых отличаются более чем в 2 раза.
         public void Task2_19()
         {
+            Console.WriteLine("Enter length of array:");
+            int l = Convert.ToInt32(Console.ReadLine());
+            int[] mas = new int[l];
+            Random rand = new Random();
+            int count = 0;
 
+            for (int i = 0; i < l; ++i)
+            {
+                mas[i] = rand.Next(0,100);
+                Console.Write($"{mas[i]}, ");
+            }
+            Console.WriteLine();
+
+            for (int i = 1; i < l - 1; ++i)
+            {
+                if (mas[i - 1] < mas[i + 1])
+                {
+                    float result = (float)mas[i + 1] / (float)mas[i - 1];
+                    if (result > 2f) 
+                    {
+                        count++;
+                        Console.WriteLine($"result = {result}, index1 {i - 1}, index2 {i + 1}");
+                    }
+                        
+                }
+                else 
+                {
+                    float result = (float)mas[i - 1] / (float)mas[i + 1];
+                    if (result > 2f)
+                    {
+                        count++;
+                        Console.WriteLine($"result = {result}, index1 {i - 1}, index2 {i + 1}");
+                    } 
+
+                }
+            }
         }
 
         //В данном массиве найти максимальное количество одинаковых элементов
         public void Task2_20()
         {
+            Console.WriteLine("Enter length of array:");
+            int l = Convert.ToInt32(Console.ReadLine());
+            int[] mas = new int[l];
+            Random rand = new Random();
+            int count = 0;
+            int num = 0;
+            int max = 0;
+
+
+            for (int i = 0; i < l; ++i)
+            {
+                mas[i] = rand.Next(0, 10);
+            }
+
+            Array.Sort(mas);
+
+            num = mas[0];
+            count = 1;
+
+            for (int i = 1; i < l; ++i)
+            {
+                if (mas[i] == mas[i-1]) count++;
+                else 
+                {
+                    if (count > max)
+                    { max = count; num = mas[i - 1];}
+                    count = 1;
+                }
+            }
+
+            Console.WriteLine($"count = {max}, number = {num}");
+
+            foreach (int i in mas)
+            {
+                Console.WriteLine($"nums: {i}");
+            }
 
         }
 
         //Дан массив x из n элементов.Найдите x1−x2+x3−…−xn−1+xn.
-        public void Task2_21() { }
+        public void Task2_21() 
+        {
+            Console.WriteLine("Enter length of array:");
+            int l = Convert.ToInt32(Console.ReadLine());
+            int[] mas = new int[l];
+            Random rand = new Random();
+            int sum = 0;
+
+            for (int i = 0; i < l; ++i)
+            {
+                mas[i] = rand.Next(0, 10);
+            }
+
+            for (int i = 0; i < l; ++i)
+            {
+                if (i % 2 == 0) sum += mas[i];
+                else sum -= mas[i];
+            }
+
+            Console.WriteLine($"Sum = {sum}");
+
+            foreach (int i in mas)
+            {
+                Console.WriteLine($"nums: {i}");
+            }
+        }
 
         //Дан массив.Найдите два соседних элемента, сумма которых минимальна
-        public void Task2_22() { }
+        public void Task2_22() 
+        {
+            Console.WriteLine("Enter length of array:");
+            int l = Convert.ToInt32(Console.ReadLine());
+            int[] mas = new int[l];
+            Random rand = new Random();
+            int sum = 0;
+            int index2 = 0;
+
+            for (int i = 0; i < l; ++i)
+            {
+                mas[i] = rand.Next(-100, 100);
+            }
+
+            for (int i = 1; i < l; ++i)
+            {
+                if (mas[i - 1] + mas[i] < sum)
+                {
+                    sum = mas[i - 1] + mas[i];
+                    index2 = i;
+                } 
+            }
+
+            foreach (int i in mas)
+            {
+                Console.Write($"{i}, ");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"sum = {sum}, index2 = {index2}");
+        }
 
         //Найдите количество различных элементов данного массива. 
         public void Task2_23() { }

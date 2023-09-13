@@ -1,8 +1,8 @@
 ﻿using System.Data;
 using System.Drawing;
-using LearnC_.Asya;
 
-namespace LearnC_
+
+namespace LearnC_.Asya
 {
     internal class Program
     {
@@ -12,7 +12,7 @@ namespace LearnC_
             //tasks.Task1_20();
 
             Arrays arrays = new Arrays();
-            arrays.Task2_10();
+            arrays.Task2_22();
 
 
         }
