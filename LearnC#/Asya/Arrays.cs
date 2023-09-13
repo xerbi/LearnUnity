@@ -7,7 +7,7 @@ namespace LearnC_.Asya
         public void ArrayShow(int[] arr, int last_index)
         {
             
-            for (int i = 0; i <= last_index;++i)
+            for (int i = 0; i < last_index;++i)
             {
                 Console.Write($"{arr[i]} ");
             }
@@ -673,7 +673,12 @@ namespace LearnC_.Asya
                     }
                     else if (mas1[i] > mas2[j])
                     {
-                        if ((j!=0)&&(mas2[j] != mas2[j - 1]))
+                        if (j == 0)
+                        {
+                            mas_res_b[index_b] = mas2[j];
+                            index_b++;
+                        }
+                        else if (mas2[j] != mas2[j - 1])
                         {
                             mas_res_b[index_b] = mas2[j];
                             index_b++;
@@ -685,7 +690,6 @@ namespace LearnC_.Asya
                     {
                         mas_res_b[index_b] = mas1[i];
                         index_b++;
-                        j++;
                         break;
                     }
                 }
@@ -696,10 +700,10 @@ namespace LearnC_.Asya
                 }
             }
             Console.WriteLine("mas1:");
-            ArrayShow(mas1,l1-1);
+            ArrayShow(mas1,l1);
 
             Console.WriteLine("mas2:");
-            ArrayShow(mas2,l2-1);
+            ArrayShow(mas2,l2);
 
             Console.WriteLine("mas_union:");
             ArrayShow(mas_res_a, index_a);
