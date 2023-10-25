@@ -715,23 +715,389 @@ namespace LearnC_.Asya
 
         //Даны два упорядоченных по возрастанию массива.
         //Образовать из этих двух массивов единый упорядоченный по возрастанию массив.
-        public void Task2_25() { }
+        public void Task2_25() 
+        {
+            int len = 10;
+            int[] mas1 = new int[len];
+            int[] mas2 = new int[len];
+            int[] mas_res = new int[len*2];
+            Random rand = new Random();
+
+            for (int i = 0; i < len; ++i)
+            {
+                mas1[i] = rand.Next(-100, 100);
+            }
+            Array.Sort(mas1);
+
+            for (int i = 0; i < len; ++i)
+            {
+                mas2[i] = rand.Next(-100, 100);
+            }
+            Array.Sort(mas2);
+
+            int k = 0, j = 0, res = 0;
+            while (k < len && j < len)
+            {
+                if (mas1[k] == mas2[j])
+                {
+                    mas_res[res] = mas1[k];
+                    mas_res[res + 1] = mas2[j];
+                    res += 2;
+                    k++;
+                    j++;
+
+                }
+                else if (mas1[k] < mas2[j])
+                {
+                    mas_res[res]= mas1[k];
+                    res++;
+                    k++;
+                }
+                else if (mas1[k] > mas2[j])
+                {
+                    mas_res[res] = mas2[j];
+                    res++;
+                    j++;
+                }
+            }
+
+            if (k == len)
+            {
+                while (j < len)
+                {
+                    mas_res[res] = mas2[j];
+                    res++;
+                    j++;
+                }
+            }
+
+            if (j == len)
+            {
+                while (k < len)
+                {
+                    mas_res[res] = mas1[k];
+                    res++;
+                    k++;
+                }
+            }
+
+            Console.Write("mas1:");
+            foreach (int i in mas1)
+            { Console.Write($"{i}, "); }
+            Console.WriteLine();
+
+            Console.Write("mas2:");
+            foreach (int i in mas2)
+            { Console.Write($"{i}, "); }
+            Console.WriteLine();
+
+            Console.Write("mas_res:");
+            foreach (int i in mas_res)
+            { Console.Write($"{i}, "); }
+            Console.WriteLine();
+
+        }
 
         //Дан массив из n элементов.Переставьте его элементы случайным образом.
-        public void Task2_26() { }
+        public void Task2_26() 
+        {
+            int len = 10;
+            int[] mas = new int[len];
+            Random rand = new Random();
+            int a = 0, b = 0, c =0;
+
+            for (int i = 0; i < len; ++i)
+            {
+                mas[i] = rand.Next(-100,100) ;
+            }
+            
+            foreach (int i in mas)
+            {
+                Console.Write($"{i}, ");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < 100; ++i)
+            {
+                a = rand.Next(0,len);
+                b = rand.Next(0,len);
+
+                c = mas[a];
+                mas[a] = mas[b];
+                mas[b] = c;
+            }
+
+            foreach (int i in mas)
+            {
+                Console.Write($"{i}, ");
+            }
+        }
 
         //Дан массив.Осуществите циклический сдвиг массив на k единиц вправо,
         //если первый наименьший элемент массива расположен раньше последнего наибольшего элемента массива, и влево, если иначе
-        public void Task2_27() { }
+        public void Task2_27() 
+        {
+            int l = 10;
+            int[] mas = new int[l];
+            int[] mas_new = new int[l];
+            int k = 5;
+            int min =0, max = 0, min_index = 0, max_index = 0;
 
-        //Дан массив и число p.Найдите два различных числа в массиве, сумма которых наиболее близка к p. 
-        public void Task2_28() { }
+            Random rand = new Random();
+
+            for (int i = 0; i < l; ++i)
+            {
+                mas[i] = rand.Next(0, 100);
+            }
+
+            for (int i = 0; i < l; ++i)
+            {
+                if (min > mas[i]) 
+                {
+                    min = mas[i];
+                    min_index = i;
+                }
+
+                if (mas[i] >= max)
+                {
+                    max = mas[i];
+                    max_index = i;
+                }
+            }
+
+            if (min_index < max_index)
+            {
+                for (int i = 0; i < l; ++i)
+                {
+                    if (i + k < l)
+                    {
+                        mas_new[i] = mas[i + k];
+                    }
+                    else
+                    {
+                        mas_new[i] = mas[i + k - l];
+                    }
+                }
+            }
+            else 
+            {
+                for (int i = 0; i < l; ++i)
+                {
+                    if (i - k >= 0)
+                    {
+                        mas_new[i] = mas[i - k];
+                    }
+                    else
+                    {
+                        mas_new[i] = mas[i + l - k];
+                    }
+                }
+            }
+
+            foreach (int i in mas)
+            {
+                Console.Write($"{i}, ");
+            }
+            Console.WriteLine();
+
+            foreach (int i in mas_new)
+            {
+                Console.Write($"{i}, ");
+            }
+
+        }
+
+        //Дан массив и число p. Найдите два различных числа в массиве, сумма которых наиболее близка к p. 
+        public void Task2_28() 
+        {
+            int l = 10;
+            int[] mas = new int[l];
+            int p = 6;
+            int rast = 20;
+            int ind_1 = 0, ind_2 = 0, k = 0;
+
+            Random rand = new Random();
+
+            for (int i = 0; i < l; ++i)
+            {
+                mas[i] = rand.Next(0,10);
+            }
+
+            
+
+            for (int i = 0; i < l; ++i)
+            {
+                for (int j = i+1; j < l; ++j)
+                {
+                    if (mas[i] != mas[j])
+                    { 
+                        k = Math.Abs(mas[i] + mas[j]-p);
+                        if (k < rast)
+                        {
+                            rast = k;
+                            ind_1 = i;
+                            ind_2 = j;
+                        }
+                    }
+                }
+            }
+            foreach (int i in mas)
+            {
+                Console.Write($"{i}, ");
+            }
+            Console.WriteLine($"num_1 = {mas[ind_1]}, num_2 = {mas[ind_2]}");
+        }
 
         //Найдите количество элементов массива, которые отличны от наибольшего элемента не более чем на 10%. 
-        public void Task2_29() { }
+        public void Task2_29() 
+        {
+            int l = 10;
+            int[] mas = new int[l];
+            Random rand = new Random();
+            int max = 0, count = 0, k = 0;
+
+            for (int i = 0; i < l; ++i)
+            {
+                mas[i] = rand.Next(0, 100);
+            }
+
+            for (int i = 0; i < l; ++i)
+            {
+                if (mas[i] > max)
+                {
+                    max = mas[i];
+                }
+            }
+            k = max / 10;
+            for (int i = 0; i < l; ++i)
+            {
+                if ((mas[i] > max - k) && (mas[i] < max + k))
+                    count++;
+            }
+            foreach (int i in mas)
+            {
+                Console.Write($"{i}, ");
+            }
+            Console.WriteLine($"max = {max}, count = {count-1}");
+
+        }
 
         //Выполните сортировку массива следующими тремя способами:
-        //сортировка пузырьком, сортировкой выбором, сортировкой вставками, сортировкой обменом.
-        public void Task2_30() { }
+        //сортировка пузырьком, сортировкой выбором, сортировкой вставками.
+        public void Task2_30() 
+        {
+            int l = 10;
+            int[] mas = new int[l];
+            Random rand = new Random();
+
+            for (int i = 0; i < l; ++i)
+            {
+                mas[i] = rand.Next(0, 100);
+            }
+
+            foreach (int i in mas)
+            {
+                Console.Write($"{i}, ");
+            }
+            Console.WriteLine();
+
+            int[] mas_bubbles = new int[l];
+            Array.Copy(mas,mas_bubbles,l);
+            Sort_bubble(mas_bubbles, l);
+
+            Console.WriteLine("Bubbles:");
+            foreach (int i in mas_bubbles)
+            {
+                Console.Write($"{i}, ");
+            }
+            Console.WriteLine();
+
+            int[] mas_choice = new int[l];
+            Array.Copy(mas, mas_choice, l);
+            Sort_choice(mas_choice, l);
+
+            Console.WriteLine("Choice:");
+            foreach (int i in mas_choice)
+            {
+                Console.Write($"{i}, ");
+            }
+            Console.WriteLine();
+            
+            int[] mas_insert = new int[l];
+            Array.Copy(mas, mas_insert, l);
+            Sort_insert(mas_insert, l);
+
+            Console.WriteLine("Insert:");
+            foreach (int i in mas_insert)
+            {
+                Console.Write($"{i}, ");
+            }
+
+
+
+        }
+        //сортировка пузырьком
+        public void Sort_bubble(int[] mas, int l) 
+        {
+            int b = 0;
+            for (int i = 0; i < l; ++i)
+            {
+                for (int j = 0; j < l-1-i; ++j)
+                {
+                    if (mas[j] > mas[j + 1])
+                    {
+                        b = mas[j];
+                        mas[j] = mas[j+1];
+                        mas[j + 1] = b;
+                    }
+                }
+            }
+        }
+        //сортировка вставками
+        public void Sort_insert(int[] mas, int l)
+        {
+            int j = 0, k = 0;
+
+            for (int i =1;i<l; ++i) 
+            {
+                j = i;
+                while ((j > 0) && (mas[j] < mas[j - 1]))
+                {
+                    k = mas[j - 1];
+                    mas[j-1] = mas[j];
+                    mas[j] = k;
+                    j--;
+                }
+            }
+        }
+        // сортировка выбором
+        public void Sort_choice(int[] mas, int l)
+        {
+            int min = 0, k = 0, t = 0;
+
+            for (int i = 0; i < l - 1; ++i)
+            {
+                min = mas[i];
+                k = i;
+                for (int j = i + 1; j < l; ++j)
+                {
+                    if (mas[j] < min)
+                    {
+                        min = mas[j];
+                        k = j;
+                    }
+                }
+
+                if (k != i)
+                {
+                    t = mas[i];
+                    mas[i] = mas[k];
+                    mas[k] = t;
+                }
+
+            }
+        }
+
+
     }
 }
